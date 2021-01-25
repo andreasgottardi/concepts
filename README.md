@@ -5,3 +5,4 @@ I am a **software developer/administrator/DevOps engineer** and on this page I a
 Links to the used software products are provided.
 
 * [Backup concept for small business with 1 to 5 servers](backup/README.md)
+* [Improve code quality in Eclipse](codequality/README.md)
