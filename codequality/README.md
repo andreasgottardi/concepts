@@ -16,9 +16,13 @@ Imagine changing one line of code, saving the file and because you are using a f
 
 ### Reduced Warnings
 
-Before and after saving:
+Before ...
 
-![Formatter configuration dialog](formatter1.png) ![Formatter configuration dialog](formatter2.png)
+![Formatter configuration dialog](formatter1.png)
+
+... and after saving:
+
+![Formatter configuration dialog](formatter2.png)
 
 Unused imports are removed automatically. This makes code easier to read, reduces code size and is in general good practice.
 
@@ -44,36 +48,36 @@ Let's assume you have a source code like the following:
 
 ```java
 String xml = ""
-				+ "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-				+ "<note>\n"
-				+ "	<to>You</to>\n"
-				+ "	<from>Me</from>\n"
-				+ "	<heading>Reminder</heading>\n"
-				+ "	<body>About the task.</body>\n"
-				+ "</note>";
+	+ "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+	+ "<note>\n"
+	+ "	<to>You</to>\n"
+	+ "	<from>Me</from>\n"
+	+ "	<heading>Reminder</heading>\n"
+	+ "	<body>About the task.</body>\n"
+	+ "</note>";
 ```
 
 Now the formatter would format it to this:
 
 ```java
 String xml = "" + "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<note>\n" + "	<to>You</to>\n"
-				+ "	<from>Me</from>\n" + "	<heading>Reminder</heading>\n" + "	<body>About the task.</body>\n"
-				+ "</note>";
+	+ "	<from>Me</from>\n" + "	<heading>Reminder</heading>\n" + "	<body>About the task.</body>\n"
+	+ "</note>";
 ```
 
 But this is not readable anymore. To avoid this the formatter offers a special comment to temporary disable it:
 
 ```Java
-		//@formatter:off
-		String xml = ""
-				+ "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-				+ "<note>\n"
-				+ "	<to>You</to>\n"
-				+ "	<from>Me</from>\n"
-				+ "	<heading>Reminder</heading>\n"
-				+ "	<body>About the task.</body>\n"
-				+ "</note>";
-		//@formatter:on
+//@formatter:off
+String xml = ""
+	+ "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+	+ "<note>\n"
+	+ "	<to>You</to>\n"
+	+ "	<from>Me</from>\n"
+	+ "	<heading>Reminder</heading>\n"
+	+ "	<body>About the task.</body>\n"
+	+ "</note>";
+//@formatter:on
 ```
 
 Now, even when formatting is applied, the marked code parts are left as they are.
