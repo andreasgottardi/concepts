@@ -41,3 +41,5 @@ Formatters are great, but they have to be applied every time manually by selecti
 ![Save actions dialog](saveactions1.png)
 
 ## SonarLint
+
+[Sonarlint](https://www.sonarlint.org) analyzes the source code during coding, shows categorized hints and provides improvements. The tool is available as [plugin for Eclipse](https://marketplace.eclipse.org/content/sonarlint).
