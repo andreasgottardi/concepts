@@ -6,3 +6,4 @@ Links to the used software products are provided.
 
 * [Backup concept for small business with 1 to 5 servers](backup/README.md)
 * [Improve code quality in Eclipse](codequality/README.md)
+* [Setting up gcc for C/C++ development](gccdevelopment/README.md)
