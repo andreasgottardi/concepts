@@ -4,7 +4,7 @@ It can be tricky to get a compiler suite up and running and there are a few thin
 
 ## Goals and scopes
 
-When implemented a program called "gcc" will be available globally. This means, that a console like PowerShell or cmd can be opened anywhere on the system and the command "gcc" is available and can be executed to compile a regular c file.
+When finishd the program "gcc" (and "gdb", "make", etc.) will be available globally. This means, that a console like PowerShell or cmd can be opened anywhere on the system and the command "gcc" is available and can be executed to compile a regular c file.
 
 ```bash
 goa@MY-HOST MINGW64 ~
@@ -19,9 +19,75 @@ This is the output when called without a c file specified. It fails, but the pro
 
 Unfortunately the tar.gz distribution is hidden and not directly accessible from the website. The distributions are listed on [this page](https://repo.msys2.org/distrib/x86_64). Take the latest version. For example the archive https://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-20210105.tar.xz is from the 5th of January 2021 and it is the latest version there was when writing this tutorial. Look at the list and pick the latest version. Save it somewhere on your system.
 
-To extract you need a program like [PeaZip](https://peazip.github.io) or [7zip](https://www.7-zip.de). Whith this tools you can extract the tar.gz file. The filename indicates, that that it is a tar file (**t**ape **ar**chiver) that is compressed with **gz**ip. Thus it has to be extracted twice because it is a uncompressed archive in a compressed archive. Most archivers can uncompress the file in one run.
+To extract you need a program like [PeaZip](https://peazip.github.io) or [7zip](https://www.7-zip.de). With this tools you can extract the tar.gz file. The filename indicates, that that it is a tar file (**t**ape **ar**chiver) that is compressed with **xz**. Thus it has to be extracted twice because it is a uncompressed archive in a compressed archive.
 
-## Install location
+![Extracting the acquired package](acquiring1.png)
+
+This generates the file **"msys2-base-x86_64-20210105.tar"** which has to be extracted by repeating the extraction step on the new file. In the end the folder should look like this:
+
+![Extracting the acquired package](acquiring2.png)
+
+This shows how much space can be saved by compressing the tar file.
+
+## Install
+
+"Move" the folder to the install location. It worked out best for me to put it under the path
+
+```cmd
+%LocalAppData%\Progams\Msys2
+```
+So basically the following command will move the application into the correct directory.
+
+```
+mkdir %LocalAppData%\Programs
+move msys64 %LocalAppData%\Programs\Msys2
+```
+
+![Intallation directory layout](install1.png)
+
+The installation then should look like this:
+
+![Intallation directory layout](install2.png)
+
+To start the configuration start the file **"mingw64.exe"**. This opens a command line window and the first output is from the initialization tasks. There are a few things that need to be set up.
+
+![Intallation directory layout](install3.png)
+
+As soon as the following screen is shown, type in "exit" and confirm with [ENTER].
+
+![Intallation directory layout](install4.png)
+
+Open **"mingw64.exe"**. The following screen should appear.
+
+![Intallation directory layout](install5.png)
+
+Type in "pacman -Syu" and confirm with [ENTER]. When the line "Proceed with installation? [Y/n]" shows up, press [Y] and [ENTER] to continue installation:
+
+![Intallation directory layout](install6.png)
+
+When everything is done, a prompt is shown and the initial installation process is done.
+
+![Intallation directory layout](install7.png)
+
+Type in "exit" and confirm with [ENTER]. This is just to be sure that all installation processes are finished. On the next start the screen should look like this:
+
+![Intallation directory layout](install5.png)
+
+Type in the following command to install the compiler suite. The packages are downloaded and installed automatically. When the line "Proceed with installation? [Y/n]" shows up, press [Y] and [ENTER] to continue installation.
+
+```bash
+pacman -S mingw64/mingw-w64-x86_64-gdb mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-make
+```
+
+![Intallation directory layout](install8.png)
+
+When everything is done, the compiler is located under
+
+```cmd
+%LocalAppData%\Programs\Msys2\mingw64\bin
+```
+
+This is also the path that should be added to the global path in the next chapter. This is just temporary: When working with multiple development environments it is better to not configure the application globally because it might interfere with other applications. But for starters this is okay.
 
 ## Integration into system
 
