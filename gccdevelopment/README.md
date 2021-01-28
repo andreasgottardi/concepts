@@ -43,35 +43,35 @@ mkdir %LocalAppData%\Programs
 move msys64 %LocalAppData%\Programs\Msys2
 ```
 
-![Intallation directory layout](install1.png)
+![Move to folder commands](install1.png)
 
 The installation then should look like this:
 
-![Intallation directory layout](install2.png)
+![Installation directory layout](install2.png)
 
 To start the configuration start the file **"mingw64.exe"**. This opens a command line window and the first output is from the initialization tasks. There are a few things that need to be set up.
 
-![Intallation directory layout](install3.png)
+![Initial configuration output](install3.png)
 
 As soon as the following screen is shown, type in "exit" and confirm with [ENTER].
 
-![Intallation directory layout](install4.png)
+![First start prompt with warning](install4.png)
 
 Open **"mingw64.exe"**. The following screen should appear.
 
-![Intallation directory layout](install5.png)
+![First start after restart](install5.png)
 
 Type in "pacman -Syu" and confirm with [ENTER]. When the line "Proceed with installation? [Y/n]" shows up, press [Y] and [ENTER] to continue installation:
 
-![Intallation directory layout](install6.png)
+![First update](install6.png)
 
 When everything is done, a prompt is shown and the initial installation process is done.
 
-![Intallation directory layout](install7.png)
+![First update finished](install7.png)
 
 Type in "exit" and confirm with [ENTER]. This is just to be sure that all installation processes are finished. On the next start the screen should look like this:
 
-![Intallation directory layout](install5.png)
+![Final prompt](install5.png)
 
 Type in the following command to install the compiler suite. The packages are downloaded and installed automatically. When the line "Proceed with installation? [Y/n]" shows up, press [Y] and [ENTER] to continue installation.
 
@@ -79,7 +79,7 @@ Type in the following command to install the compiler suite. The packages are do
 pacman -S mingw64/mingw-w64-x86_64-gdb mingw64/mingw-w64-x86_64-gcc mingw64/mingw-w64-x86_64-make
 ```
 
-![Intallation directory layout](install8.png)
+![Installation of compiler suite](install8.png)
 
 When everything is done, the compiler is located under
 
